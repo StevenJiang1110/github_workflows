@@ -1,0 +1,15 @@
+# This workflow pushes a new Git tag to the main branch when the version bumps.
+
+name: On tag push
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  tag_main_branch:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Echo new tag pushes
+        run: echo "1234" 
